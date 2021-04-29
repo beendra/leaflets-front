@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(211, 240, 211);
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,63 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.main {
+  background-color: rgb(235, 238, 235);
+  border: 10px;
+  border-style: solid;
+  border-color: black;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.header {
+  border: 4px;
+  border-style: dotted;
+  border-color: purple;
+}
+
+.welcome-text{
+  text-align: justify-left !important;
+}
+
+.nav {
+  border: 5px;
+  border-style: dashed;
+  border-color: green;
+}
+
+.login {
+  background-color: rgb(192, 209, 203);
+  border: 3px;
+  border-style: solid;
+  border-color: white;
+  width: 60%;
+  margin-left: 20%;
+  padding-bottom: 50px;
+}
+
+.login-h2 {
+  background-color: whitesmoke;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container {
+  border: 3px;
+  border-style: solid;
+  border-color: blue;
+}
+
+.one-plant {
+  border: 5px;
+  border-style: dotted;
+  border-color: black;
+}
+
+.logs {
+  border: 2px;
+  border-style: solid;
+  border-color: red;
 }

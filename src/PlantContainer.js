@@ -3,7 +3,7 @@ import PlantInfo from './PlantInfo';
 
 function PlantContainer(){
     return(
-        <div>
+        <div className="container">
         <p>Plant Container</p>
         <PlantInfo />
         </div>

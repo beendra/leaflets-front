@@ -1,11 +1,16 @@
 import React from 'react';
 import NavBar from './NavBar';
 
-function Header(){
+function Header({ currentUser }){
     return (
         <div className="header">
         <h1>Header</h1>
-        <NavBar />
+        {currentUser ? (
+        <p className="welcome-text">Welcome {currentUser.username} </p>
+        ): (
+        <p>Please Login or Sign Up.</p>
+        )}
+        <NavBar currentUser={currentUser}/>
         </div>
     )
 }
