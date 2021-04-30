@@ -1,44 +1,56 @@
 body {
   background-color: rgb(211, 240, 211);
 }
+:root {
+  --primary: #3acbf7;
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  padding: 8px 20px;
+  transition: all 0.3s ease-out;
+  background: #fff;
+  color: #6568f4;
+  transition: 250ms;
+}
+
+.btn--primary {
+  background-color: var(--primary);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 4px;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease-out;
+}
+
+.btn--medium {
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.btn--large {
+  padding: 12px 26px;
+  border-radius: 4px;
+  font-size: 20px;
+  color: #fff;
+}
 
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-family: 'Poppins', sans-serif;
 }
 
 .main {
@@ -51,19 +63,79 @@ body {
 }
 
 .header {
-  border: 4px;
-  border-style: dotted;
-  border-color: purple;
+  border: 2px;
+  border-style: solid;
+  border-color: rgb(5, 53, 26);
+  justify-content: right;
+  align-items: right;
 }
 
 .welcome-text{
-  text-align: justify-left !important;
+  text-align: right;
+  justify-content: right;
+  align-items: right;
+  padding: 5px;
 }
 
-.nav {
-  border: 5px;
+.navbar-items {
+  background: linear-gradient(90deg, rgb(174, 221, 190) 0%, rgb(3, 78, 9) 100%);
+  height: 80px;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  font-size: 1.2rem;
+}
+
+.navbar-logo {
+  color: #fff;
+  justify-self: start;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: left;
+  width: 70vw;
+  justify-content: left;
+  margin-right: 5rem;
+}
+
+.nav-links {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.fa-bars {
+  color: #fff;
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.nav-links:hover {
+  background-color: #b5cc89;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+
+.create-user-form {
+  background-color: rgb(192, 209, 203);
+  border: 3px;
   border-style: dashed;
-  border-color: green;
+  border-color: white;
+  width: 60%;
+  margin-left: 20%;
+  padding-bottom: 50px;
 }
 
 .login {
@@ -82,6 +154,10 @@ body {
   padding-bottom: 20px;
 }
 
+.logout-button {
+  text-align: right;
+}
+
 .container {
   border: 3px;
   border-style: solid;
@@ -98,4 +174,81 @@ body {
   border: 2px;
   border-style: solid;
   border-color: red;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar-items {
+    position: relative;
+  }
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-menu.active {
+    background: #315a0c;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-links:hover {
+    background-color: #85b188;
+    border-radius: 0;
+  }
+
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .fa-times {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .nav-links-mobile {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+    background: #a1dda6;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
+  .nav-links-mobile:hover {
+    background: #fff;
+    color: #a0ecc2;
+    transition: 250ms;
+  }
 }

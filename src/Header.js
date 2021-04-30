@@ -1,16 +1,25 @@
 import React from 'react';
 import NavBar from './NavBar';
+import { Link } from 'react-router-dom';
 
-function Header({ currentUser }){
+function Header({ currentUser, setCurrentUser }){
+
+    const handleLogout = () => {
+        localStorage.setItem("userId", null)
+        setCurrentUser(null)
+    }
+
     return (
         <div className="header">
-        <h1>Header</h1>
         {currentUser ? (
-        <p className="welcome-text">Welcome {currentUser.username} </p>
+        <p className="welcome-text">Welcome {currentUser.username}. </p>
         ): (
-        <p>Please Login or Sign Up.</p>
+        <p>Please <Link to="/login">Login</Link> or <Link to="/create-account">Sign Up</Link></p>
         )}
-        <NavBar currentUser={currentUser}/>
+        {/* <span className="logout-button">
+        <Link to="/login" onClick={() => handleLogout()}>Logout</Link>
+        </span> */}
+        <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         </div>
     )
 }
