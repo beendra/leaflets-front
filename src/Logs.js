@@ -6,7 +6,6 @@ function Logs(){
             <li>log entry</li>
             <li>log entry</li>
             <li>log entry</li>
-            <li>log entry</li>
         </ul>
     )
 }

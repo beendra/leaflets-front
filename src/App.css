@@ -75,6 +75,7 @@ body {
   justify-content: right;
   align-items: right;
   padding: 5px;
+  padding-bottom: 0px;
 }
 
 .navbar-items {
@@ -155,7 +156,12 @@ body {
 }
 
 .logout-button {
+  font-size: 12px;
   text-align: right;
+  justify-content: right;
+  align-items: right;
+  padding: 2px;
+  padding-right: 20px;
 }
 
 .container {
@@ -165,6 +171,9 @@ body {
 }
 
 .one-plant {
+  height: 200px;
+  width: 175px;
+  margin: 15px;
   border: 5px;
   border-style: dotted;
   border-color: black;

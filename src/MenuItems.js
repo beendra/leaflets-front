@@ -19,9 +19,9 @@ export const MenuItems = [
         url: '/guides',
         cName: 'nav-links'
     },
-    {
-        title: 'Logout',
-        url: '/login',
-        cName: 'nav-links'
-    }
+    // {
+    //     title: 'Logout',
+    //     url: '/login',
+    //     cName: 'nav-links'
+    // }
 ]

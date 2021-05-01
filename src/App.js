@@ -1,5 +1,5 @@
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';
 import Login from './Login';
@@ -10,14 +10,21 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const history = useHistory();
 
   useEffect(() => {
-    fetch("http://localhost:4000/my-account")
+    const userId = localStorage.getItem('userId');
+    // console.log("localStorage UserId", userId);
+
+    if (userId) {
+    fetch(`http://localhost:4000/my-account/${parseInt(userId)}`)
     .then((r) => r.json())
     .then((user) => {
       setCurrentUser(user);
+      history.push("/my-account");
     })
-  }, []);
+    }
+  }, [history]);
 
   function newAccount(newAccountFromForm){
     console.log(newAccountFromForm)

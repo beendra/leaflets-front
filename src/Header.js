@@ -16,9 +16,9 @@ function Header({ currentUser, setCurrentUser }){
         ): (
         <p>Please <Link to="/login">Login</Link> or <Link to="/create-account">Sign Up</Link></p>
         )}
-        {/* <span className="logout-button">
+        <p className="logout-button">
         <Link to="/login" onClick={() => handleLogout()}>Logout</Link>
-        </span> */}
+        </p>
         <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         </div>
     )

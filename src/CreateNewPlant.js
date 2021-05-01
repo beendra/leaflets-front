@@ -5,61 +5,68 @@ import { useHistory } from 'react-router-dom';
 function CreateNewPlant({ currentUser, handleAddPlant }){
     const history = useHistory()
     // const { photo, name } = currentUser.plants
-    const [formData, setFormData] = useState({
-        name: "",
+    const [createState, setCreateState] = useState({
+        plant_name: "",
         photo: null,
-        user_id: currentUser
+        user_id: 1,
+        database_id: 1
     })
-
+    console.log(currentUser.id)
     function handleSubmit(e) {
         e.preventDefault();
 
-        setFormData ({ 
-            name: "", 
-            photo: ""
-        })
-
+        // const formData = new FormData();
+        // formData.append('plant_name', createState.plant_name);
+        // formData.append('photo', createState.photo);
+        // formData.append('user_id', currentUser.id);
+        // formData.append('database_id', 1)
+        // debugger
         fetch('http://localhost:4000/plants', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify(formData)
+            body: JSON.stringify(createState),
         })
         .then((r) => r.json())
         .then((plant) => {
-            localStorage.setItem("plantId", plant.id)
-            // console.log("LOCAL", localStorage.getItem("postId"));
+            // localStorage.setItem("plantId", plant.id)
+            // console.log("LOCAL", localStorage.getItem("plantId"));
+            debugger
             handleAddPlant(plant)
-            // console.log(post)
+            // console.log(plant)
             history.push('/my-account')
+        
         })
     }
 
     function handleChange(e){
-        setFormData({...formData, [e.target.name]: e.target.value})
+        setCreateState({...createState, [e.target.name]: e.target.value})
+    }
+
+    function onImageChange(e){
+        setCreateState({...createState, photo: e.target.files[0] })
     }
 
     return(
         <div className="new-plant-form">
-        <p>Add a Plant</p>
         <form onSubmit={handleSubmit}>
         <label>Name: </label>
             <input
                 type="text"
-                name="name"
-                value={formData.name}
+                name="plant_name"
+                value={createState.plant_name}
                 onChange={handleChange}
             />
             <br />
         <label>Photo: </label>
             <input 
-                type='file' 
-                name='photo'
-                value={formData.photo}
-                onChange={handleChange}
-            /> 
+                type="file" 
+                accept="image/*" 
+                multiple={false} 
+                onChange={onImageChange} 
+            />
             <input type="submit" value="Submit" /> 
         </form> 
         <br/>
