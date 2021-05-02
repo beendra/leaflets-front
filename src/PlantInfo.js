@@ -1,10 +1,9 @@
 import React from 'react';
 import AllLogs from './AllLogs';
-import AddLogForm from './AddLogForm';
 import { useState } from 'react';
 
-function PlantInfo({ plant, currentUser, handleAddPlant, handleAddLog, logs, setLogs }){
-    const [showLogs, setShowLogs]= useState(null);
+function PlantInfo({ plant, currentUser, handleAddPlant, handleAddLog, logs, setLogs, handleDelete }){
+    const [showLogs, setShowLogs]= useState(false);
 
     function handleLogs(){
         setShowLogs(!showLogs);
@@ -18,8 +17,7 @@ function PlantInfo({ plant, currentUser, handleAddPlant, handleAddLog, logs, set
         <button onClick={handleLogs}>Logs</button>
         { showLogs ? 
         <div className="logs-div">
-        <AllLogs plant={plant} currentUser={currentUser} handleAddLog={handleAddLog} logs={logs} setLogs={setLogs}/>
-        <AddLogForm plant={plant} currentUser={currentUser} handleAddLog={handleAddLog}/>
+        <AllLogs plant={plant} currentUser={currentUser} handleAddLog={handleAddLog} logs={logs} setLogs={setLogs} handleDelete={handleDelete}/>
         </div>
         : null }
         

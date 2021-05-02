@@ -185,6 +185,14 @@ body {
   border-color: red;
 }
 
+.each-log {
+  border: 2px;
+  border-style: dashed;
+  border-color: rgb(201, 107, 196);
+  justify-content: right;
+  align-items: right;
+}
+
 @media screen and (max-width: 960px) {
   .navbar-items {
     position: relative;

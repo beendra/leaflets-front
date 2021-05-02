@@ -34,6 +34,11 @@ function Account({ currentUser }){
         setLogs(updatedLogList)
     }
 
+    function handleDelete(deleteLog){
+        const updateLogs = logs.filter((log) => log.id !== deleteLog.id)
+        setLogs(updateLogs)
+    }
+
     return(
         <div className="main">
         <p>Account</p>
@@ -42,7 +47,7 @@ function Account({ currentUser }){
             
 
             {currentUser ? (
-            <PlantContainer currentUser={currentUser} plants={plants} setPlants={setPlants} handleAddPlant={handleAddPlant} logs={logs} setLogs={setLogs} handleAddLog={handleAddLog}/>
+            <PlantContainer currentUser={currentUser} plants={plants} setPlants={setPlants} handleAddPlant={handleAddPlant} logs={logs} setLogs={setLogs} handleAddLog={handleAddLog} handleDelete={handleDelete}/>
             ) : (null) }
         </div>
     )
