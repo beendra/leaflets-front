@@ -1,28 +1,32 @@
 import React from 'react';
 import PlantInfo from './PlantInfo';
 
-function PlantContainer({ currentUser, plants, setPlants, handleAddPlant }){
+function PlantContainer({ currentUser, plants, setPlants, handleAddPlant, handleAddLog, logs, setLogs }){
 
     const plantList = Array.from(plants)
     console.log(plants)
 
     const allPlants = plantList.map((plant) =>{
         return(
-        <div className="each-plant">
+        <>
         <PlantInfo 
         key={plant.id}
         setPlants={setPlants}
         handleAddPlant={handleAddPlant}
+        handleAddLog={handleAddLog}
         {...plant}
         plant={plant}
+        currentUser={currentUser}
+        logs={logs}
+        setLogs={setLogs}
         />
-        </div>
+        </>
     )
     })
 
     return (
         <div className="container">
-        <p>Plant Container</p>
+        <p>My Plants</p>
             {allPlants}
         </div>
     )

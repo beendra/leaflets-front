@@ -5,6 +5,7 @@ import PlantContainer from './PlantContainer';
 
 function Account({ currentUser }){
     const [plants, setPlants] = useState([]);
+    const [logs, setLogs] = useState([]);
     const [showAdd, setShowAdd] = useState(false);
 
     useEffect(() => {
@@ -13,13 +14,24 @@ function Account({ currentUser }){
         .then((data) => setPlants(data))
     }, []);
 
+    useEffect(() => {
+        fetch("http://localhost:4000/logs")
+        .then((r) => r.json())
+        .then((data) => setLogs(data))
+    }, []);
+
     function handleShowAddPlant(){
         setShowAdd(!showAdd)
     }
 
-    function handleAddPlant(newPlant) { 
+    function handleAddPlant(newPlant){ 
         const updatedPlantList = [...plants, newPlant] 
         setPlants(updatedPlantList) 
+    }
+
+    function handleAddLog(newLog){
+        const updatedLogList = [...logs, newLog]
+        setLogs(updatedLogList)
     }
 
     return(
@@ -30,7 +42,7 @@ function Account({ currentUser }){
             
 
             {currentUser ? (
-            <PlantContainer currentUser={currentUser} plants={plants} setPlants={setPlants} handleAddPlant={handleAddPlant}/>
+            <PlantContainer currentUser={currentUser} plants={plants} setPlants={setPlants} handleAddPlant={handleAddPlant} logs={logs} setLogs={setLogs} handleAddLog={handleAddLog}/>
             ) : (null) }
         </div>
     )

@@ -33,7 +33,7 @@ function CreateNewPlant({ currentUser, handleAddPlant }){
         .then((plant) => {
             // localStorage.setItem("plantId", plant.id)
             // console.log("LOCAL", localStorage.getItem("plantId"));
-            debugger
+            // debugger
             handleAddPlant(plant)
             // console.log(plant)
             history.push('/my-account')
@@ -45,9 +45,9 @@ function CreateNewPlant({ currentUser, handleAddPlant }){
         setCreateState({...createState, [e.target.name]: e.target.value})
     }
 
-    function onImageChange(e){
-        setCreateState({...createState, photo: e.target.files[0] })
-    }
+    // function onImageChange(e){
+    //     setCreateState({...createState, photo: e.target.files[0] })
+    // }
 
     return(
         <div className="new-plant-form">
@@ -60,13 +60,13 @@ function CreateNewPlant({ currentUser, handleAddPlant }){
                 onChange={handleChange}
             />
             <br />
-        <label>Photo: </label>
+        {/* <label>Photo: </label>
             <input 
                 type="file" 
                 accept="image/*" 
                 multiple={false} 
                 onChange={onImageChange} 
-            />
+            /> */}
             <input type="submit" value="Submit" /> 
         </form> 
         <br/>
