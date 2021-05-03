@@ -39,7 +39,7 @@ function AllLogs({ plant, currentUser, handleAddLog, logs, setLogs, handleDelete
         <ul className="logs">
             <button onClick={handleAddLogForm}>New Log</button>
             { showAddLogForm ?
-            <AddLogForm plant={plant} currentUser={currentUser} handleAddLog={handleAddLog}/>
+            <AddLogForm plant={plant} currentUser={currentUser} handleAddLog={handleAddLog} showAddLogForm={showAddLogForm} setShowAddLogForm={setShowAddLogForm}/>
             : null  }
             {allLogs}
         </ul>

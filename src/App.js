@@ -13,6 +13,8 @@ function App() {
   const [db, setDb] = useState([]);
   const history = useHistory();
 
+  // console.log(db[0].id)
+
   useEffect(() => {
     const userId = localStorage.getItem('userId');
     // console.log("localStorage UserId", userId);
@@ -22,7 +24,7 @@ function App() {
     .then((r) => r.json())
     .then((user) => {
       setCurrentUser(user);
-      history.push("/my-account");
+      // history.push("/my-account");
     })
     }
   }, [history]);
@@ -42,9 +44,6 @@ function App() {
     <div className="App">
       <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
         <Route exact path="/login">
           <Login currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         </Route>
@@ -56,6 +55,9 @@ function App() {
         </Route>
         <Route exact path="/guides">
           <Guides db={db} setDb={setDb}/>
+        </Route>
+        <Route exact path="/">
+          <Home />
         </Route>
       </Switch>
     </div>

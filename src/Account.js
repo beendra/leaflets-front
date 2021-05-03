@@ -29,6 +29,17 @@ function Account({ currentUser, db, setDb }){
         setPlants(updatedPlantList) 
     }
 
+    function handleUpdatePlant(updatedPlant){
+        const editedPlantList = plants.map((plant) => {
+            if (plant.id === updatedPlant.id) {
+                return updatedPlant
+            } else {
+                return plant
+            }
+        })
+        setPlants(editedPlantList)
+    }
+
     function handleAddLog(newLog){
         const updatedLogList = [...logs, newLog]
         setLogs(updatedLogList)
@@ -48,11 +59,11 @@ function Account({ currentUser, db, setDb }){
         <div className="main">
         <p>Account</p>
             <button onClick={handleShowAddPlant}>Add a Plant</button>
-            { showAdd ? <CreateNewPlant currentUser={currentUser} handleAddPlant={handleAddPlant} db={db} setDb={setDb}/> : null}
+            { showAdd ? <CreateNewPlant currentUser={currentUser} handleAddPlant={handleAddPlant} db={db} setDb={setDb} showAdd={showAdd} setShowAdd={setShowAdd}/> : null}
             
 
             {currentUser ? (
-            <PlantContainer currentUser={currentUser} plants={plants} setPlants={setPlants} handleAddPlant={handleAddPlant} logs={logs} setLogs={setLogs} handleAddLog={handleAddLog} handleDelete={handleDelete} db={db} setDb={setDb} handleDeletePlant={handleDeletePlant}/>
+            <PlantContainer currentUser={currentUser} plants={plants} setPlants={setPlants} handleAddPlant={handleAddPlant} logs={logs} setLogs={setLogs} handleAddLog={handleAddLog} handleDelete={handleDelete} db={db} setDb={setDb} handleDeletePlant={handleDeletePlant} handleUpdatePlant={handleUpdatePlant}/>
             ) : (null) }
         </div>
     )

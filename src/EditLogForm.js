@@ -67,6 +67,7 @@ function EditLogForm({ currentUser, log, plantId, plant, entry, setEdit, handleD
                             value={editLogForm.date}
                             onChange={handleChange}
                         />
+                <br />
                     <label>Edit Entry: </label>
                         <input
                             type="textarea"
@@ -76,6 +77,7 @@ function EditLogForm({ currentUser, log, plantId, plant, entry, setEdit, handleD
                         />
                         <input type="submit" value="Submit" /> 
                 </form> 
+                <br />
                 <button onClick={handleDeleteFetch}>Delete</button>
         </div>
     )

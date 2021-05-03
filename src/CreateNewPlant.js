@@ -2,26 +2,21 @@ import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function CreateNewPlant({ currentUser, handleAddPlant, db, setDb }){
+function CreateNewPlant({ currentUser, handleAddPlant, db, setDb, showAdd, setShowAdd }){
     const history = useHistory();
     const [createState, setCreateState] = useState({
         plant_name: "",
-        photo: null,
+        // photo: null,
         user_id: 1,
-        database_id: db.id
+        database_id: db.plant
     })
 
-    console.log(currentUser.id)
-    console.log(db)
+    console.log(createState.database_id)
+    
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        // const formData = new FormData();
-        // formData.append('plant_name', createState.plant_name);
-        // formData.append('photo', createState.photo);
-        // formData.append('user_id', currentUser.id);
-        // formData.append('database_id', 1)
         // debugger
         fetch('http://localhost:4000/plants', {
             method: 'POST',
@@ -37,10 +32,10 @@ function CreateNewPlant({ currentUser, handleAddPlant, db, setDb }){
             // console.log("LOCAL", localStorage.getItem("plantId"));
             // debugger
             handleAddPlant(plant)
-            // console.log(plant)
+            console.log(plant)
             history.push('/my-account')
-        
         })
+        setShowAdd(!showAdd)
     }
 
     function handleChange(e){
@@ -63,8 +58,11 @@ function CreateNewPlant({ currentUser, handleAddPlant, db, setDb }){
                     />
             <br />
                 <label>Plant Type: </label>
-                    <select>
-                        { db.map((plant) => <option key={plant.id}>{plant.common_name}</option>) }
+                    <select
+                    value={createState.database_id}
+                    name="database_id"
+                    onChange={handleChange}>
+                        { db.map((plant) => <option key={plant.id} id={plant.id}>{plant.common_name}</option>) }
                     </select>
             <br />
                 {/* <label>Photo: </label>

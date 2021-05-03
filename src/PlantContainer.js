@@ -1,13 +1,13 @@
 import React from 'react';
 import PlantInfo from './PlantInfo';
 
-function PlantContainer({ currentUser, plants, setPlants, handleAddPlant, handleAddLog, logs, setLogs, handleDelete, db, setDb, handleDeletePlant }){
+function PlantContainer({ currentUser, plants, setPlants, handleAddPlant, handleAddLog, logs, setLogs, handleDelete, db, setDb, handleDeletePlant, handleUpdatePlant }){
 
-    const plantList = Array.from(plants)
+    // const plantList = Array.from(plants)
     console.log(plants)
 
-    const allPlants = plantList.map((plant) =>{
-        // console.log(plant.id)
+    const allPlants = plants.map((plant) =>{
+        
         return(
         <>
         <PlantInfo 
@@ -24,6 +24,7 @@ function PlantContainer({ currentUser, plants, setPlants, handleAddPlant, handle
         db={db}
         setDb={setDb}
         handleDeletePlant={handleDeletePlant}
+        handleUpdatePlant={handleUpdatePlant}
         />
         </>
     )

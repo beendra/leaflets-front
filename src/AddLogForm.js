@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function AddLogForm({ plant, currentUser, handleAddLog }){
+function AddLogForm({ plant, currentUser, handleAddLog, showAddLogForm, setShowAddLogForm }){
     const history = useHistory();
     const [logForm, setLogForm] = useState({
         date: "",
@@ -34,6 +34,7 @@ function AddLogForm({ plant, currentUser, handleAddLog }){
             // console.log(post)
             history.push('/my-account')
         })
+        setShowAddLogForm(!showAddLogForm);
     }
 
     function handleChange(e){

@@ -2,9 +2,10 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
-function EditPlant({ currentUser, db, setDb, handleDeletePlant, plant, showEditPlant, setShowEditPlant, editPlant, setEditPlant }){
+function EditPlant({ currentUser, db, setDb, handleDeletePlant, plant, showEditPlant, setShowEditPlant, editPlant, setEditPlant, handleUpdatePlant }){
     const history = useHistory();
     const [editPlantForm, setEditPlantForm] = useState({
+        id: "",
         plant_name: "",
         photo: null,
         user_id: 1,
@@ -27,7 +28,8 @@ function EditPlant({ currentUser, db, setDb, handleDeletePlant, plant, showEditP
         .then((editedPlant) => {
             localStorage.setItem("plantId", plant.id)
             // console.log("LOCAL", localStorage.getItem("plantId"));
-            setEditPlant(editedPlant.plant_name)
+            // setEditPlant(editedPlant)
+            handleUpdatePlant(editedPlant)
             // console.log(plant)
             history.push('./my-account');
         })
@@ -55,7 +57,7 @@ function EditPlant({ currentUser, db, setDb, handleDeletePlant, plant, showEditP
     return (
         <div className="edit-plant-form">
             <form onSubmit={handleSubmit}>
-                <label>Name: </label>
+                <label>Edit Name: </label>
                     <input
                         type="text"
                         name="plant_name"
@@ -63,8 +65,10 @@ function EditPlant({ currentUser, db, setDb, handleDeletePlant, plant, showEditP
                         onChange={handleChange}
                     />
             <br />
-                <label>Plant Type: </label>
-                    <select>
+                <label>Edit Plant Type: </label>
+                    <select
+                    value={editPlantForm.database_id}
+                    onChange={handleChange}>
                         { db.map((plant) => <option key={plant.id}>{plant.common_name}</option>) }
                     </select>
             <br />

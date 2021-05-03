@@ -4,7 +4,7 @@ import EditPlant from './EditPlant';
 import { useState } from 'react';
 
 
-function PlantInfo({ id, plant, currentUser, handleAddPlant, handleAddLog, logs, setLogs, handleDelete, db, setDb, handleDeletePlant }){
+function PlantInfo({ id, plant, currentUser, handleAddPlant, handleAddLog, logs, setLogs, handleDelete, db, setDb, handleDeletePlant, handleUpdatePlant }){
     const [showLogs, setShowLogs] = useState(false);
     const [showEditPlant, setShowEditPlant] = useState(false);
     const [editPlant, setEditPlant] = useState("");
@@ -20,7 +20,7 @@ function PlantInfo({ id, plant, currentUser, handleAddPlant, handleAddLog, logs,
     return(
         <div className="one-plant">
         {/* <p>{plant.id}</p> */}
-        <p>{editPlant.name}</p>
+        <p>{editPlant}</p>
         <img src={plant.image} alt={plant.plant_name}/>
         <br />
         <button onClick={handleLogs}>Logs</button>
@@ -33,7 +33,7 @@ function PlantInfo({ id, plant, currentUser, handleAddPlant, handleAddLog, logs,
 
         <button onClick={handleShowEditPlants}>Edit</button>
         { showEditPlant ?
-        <EditPlant db={db} setDb={setDb} handleDeletePlant={handleDeletePlant} plant={plant} showEditPlant={showEditPlant} setShowEditPlant={setShowEditPlant} id={id} currentUser={currentUser} editPlant={editPlant} setEditPlant={setEditPlant}/>
+        <EditPlant db={db} setDb={setDb} handleDeletePlant={handleDeletePlant} plant={plant} showEditPlant={showEditPlant} setShowEditPlant={setShowEditPlant} id={id} currentUser={currentUser} editPlant={editPlant} setEditPlant={setEditPlant} handleUpdatePlant={handleUpdatePlant}/>
         : null }
         </div>
     )
