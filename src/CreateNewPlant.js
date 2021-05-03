@@ -2,16 +2,18 @@ import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function CreateNewPlant({ currentUser, handleAddPlant }){
+function CreateNewPlant({ currentUser, handleAddPlant, db, setDb }){
     const history = useHistory()
-    // const { photo, name } = currentUser.plants
     const [createState, setCreateState] = useState({
         plant_name: "",
         photo: null,
         user_id: 1,
-        database_id: 1
+        database_id: db.id
     })
+
     console.log(currentUser.id)
+    console.log(db)
+
     function handleSubmit(e) {
         e.preventDefault();
 
@@ -51,26 +53,31 @@ function CreateNewPlant({ currentUser, handleAddPlant }){
 
     return(
         <div className="new-plant-form">
-        <form onSubmit={handleSubmit}>
-        <label>Name: </label>
-            <input
-                type="text"
-                name="plant_name"
-                value={createState.plant_name}
-                onChange={handleChange}
-            />
+            <form onSubmit={handleSubmit}>
+                <label>Name: </label>
+                    <input
+                        type="text"
+                        name="plant_name"
+                        value={createState.plant_name}
+                        onChange={handleChange}
+                    />
             <br />
-        {/* <label>Photo: </label>
-            <input 
-                type="file" 
-                accept="image/*" 
-                multiple={false} 
-                onChange={onImageChange} 
-            /> */}
-            <input type="submit" value="Submit" /> 
-        </form> 
-        <br/>
-    </div>
+                <label>Plant Type: </label>
+                    <select>
+                        { db.map((plant) => <option key={plant.id}>{plant.common_name}</option>) }
+                    </select>
+            <br />
+                {/* <label>Photo: </label>
+                    <input 
+                        type="file" 
+                        accept="image/*" 
+                        multiple={false} 
+                        onChange={onImageChange} 
+                    /> */}
+                <input type="submit" value="Submit" /> 
+            </form> 
+            <br/>
+        </div>
     )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PlantInfo from './PlantInfo';
 
-function PlantContainer({ currentUser, plants, setPlants, handleAddPlant, handleAddLog, logs, setLogs, handleDelete }){
+function PlantContainer({ currentUser, plants, setPlants, handleAddPlant, handleAddLog, logs, setLogs, handleDelete, db, setDb }){
 
     const plantList = Array.from(plants)
     console.log(plants)
@@ -20,6 +20,8 @@ function PlantContainer({ currentUser, plants, setPlants, handleAddPlant, handle
         logs={logs}
         setLogs={setLogs}
         handleDelete={handleDelete}
+        db={db}
+        setDb={setDb}
         />
         </>
     )

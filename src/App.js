@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const [db, setDb] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -25,6 +26,12 @@ function App() {
     })
     }
   }, [history]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/databases")
+    .then((r) => r.json())
+    .then((data) => setDb(data))
+}, []);
 
   function newAccount(newAccountFromForm){
     console.log(newAccountFromForm)
@@ -45,10 +52,10 @@ function App() {
           <CreateAccount currentUser={currentUser} newAccount={newAccount}/>
         </Route>
         <Route exact path="/my-account">
-          <Account currentUser={currentUser}/>
+          <Account currentUser={currentUser} db={db} setDb={setDb}/>
         </Route>
         <Route exact path="/guides">
-          <Guides />
+          <Guides db={db} setDb={setDb}/>
         </Route>
       </Switch>
     </div>

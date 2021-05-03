@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import CreateNewPlant from './CreateNewPlant';
 import PlantContainer from './PlantContainer';
 
-function Account({ currentUser }){
+function Account({ currentUser, db, setDb }){
     const [plants, setPlants] = useState([]);
     const [logs, setLogs] = useState([]);
     const [showAdd, setShowAdd] = useState(false);
@@ -43,11 +43,11 @@ function Account({ currentUser }){
         <div className="main">
         <p>Account</p>
             <button onClick={handleShowAddPlant}>Add a Plant</button>
-            { showAdd ? <CreateNewPlant currentUser={currentUser} handleAddPlant={handleAddPlant}/> : null}
+            { showAdd ? <CreateNewPlant currentUser={currentUser} handleAddPlant={handleAddPlant} db={db} setDb={setDb}/> : null}
             
 
             {currentUser ? (
-            <PlantContainer currentUser={currentUser} plants={plants} setPlants={setPlants} handleAddPlant={handleAddPlant} logs={logs} setLogs={setLogs} handleAddLog={handleAddLog} handleDelete={handleDelete}/>
+            <PlantContainer currentUser={currentUser} plants={plants} setPlants={setPlants} handleAddPlant={handleAddPlant} logs={logs} setLogs={setLogs} handleAddLog={handleAddLog} handleDelete={handleDelete} db={db} setDb={setDb}/>
             ) : (null) }
         </div>
     )

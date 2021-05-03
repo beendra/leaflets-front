@@ -1,12 +1,19 @@
 import React from 'react';
 import AllLogs from './AllLogs';
+import EditPlant from './EditPlant';
 import { useState } from 'react';
 
-function PlantInfo({ plant, currentUser, handleAddPlant, handleAddLog, logs, setLogs, handleDelete }){
-    const [showLogs, setShowLogs]= useState(false);
+
+function PlantInfo({ plant, currentUser, handleAddPlant, handleAddLog, logs, setLogs, handleDelete, db, setDb }){
+    const [showLogs, setShowLogs] = useState(false);
+    const [showEditPlant, setShowEditPlant] = useState(false);
 
     function handleLogs(){
         setShowLogs(!showLogs);
+    }
+
+    function handleShowEditPlants(){
+        setShowEditPlant(!showEditPlant);
     }
 
     return(
@@ -20,7 +27,12 @@ function PlantInfo({ plant, currentUser, handleAddPlant, handleAddLog, logs, set
         <AllLogs plant={plant} currentUser={currentUser} handleAddLog={handleAddLog} logs={logs} setLogs={setLogs} handleDelete={handleDelete}/>
         </div>
         : null }
-        
+        <br />
+
+        <button onClick={handleShowEditPlants}>Edit</button>
+        { showEditPlant ?
+        <EditPlant db={db} setDb={setDb}/>
+        : null }
         </div>
     )
 }
