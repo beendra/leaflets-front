@@ -39,6 +39,11 @@ function Account({ currentUser, db, setDb }){
         setLogs(updateLogs)
     }
 
+    function handleDeletePlant(deletePlant){
+        const updatePlants = plants.filter((plant) => plant.id !== deletePlant.id)
+        setPlants(updatePlants)
+    }
+
     return(
         <div className="main">
         <p>Account</p>
@@ -47,7 +52,7 @@ function Account({ currentUser, db, setDb }){
             
 
             {currentUser ? (
-            <PlantContainer currentUser={currentUser} plants={plants} setPlants={setPlants} handleAddPlant={handleAddPlant} logs={logs} setLogs={setLogs} handleAddLog={handleAddLog} handleDelete={handleDelete} db={db} setDb={setDb}/>
+            <PlantContainer currentUser={currentUser} plants={plants} setPlants={setPlants} handleAddPlant={handleAddPlant} logs={logs} setLogs={setLogs} handleAddLog={handleAddLog} handleDelete={handleDelete} db={db} setDb={setDb} handleDeletePlant={handleDeletePlant}/>
             ) : (null) }
         </div>
     )

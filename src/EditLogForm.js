@@ -57,7 +57,7 @@ function EditLogForm({ currentUser, log, plantId, plant, entry, setEdit, handleD
     
 
     return (
-        <div>
+        <div className="edit-log-form">
             <p>Edit Log</p>
                 <form onSubmit={handleSubmit}>
                     <label>Edit Date: </label>

@@ -1,12 +1,13 @@
 import React from 'react';
 import PlantInfo from './PlantInfo';
 
-function PlantContainer({ currentUser, plants, setPlants, handleAddPlant, handleAddLog, logs, setLogs, handleDelete, db, setDb }){
+function PlantContainer({ currentUser, plants, setPlants, handleAddPlant, handleAddLog, logs, setLogs, handleDelete, db, setDb, handleDeletePlant }){
 
     const plantList = Array.from(plants)
     console.log(plants)
 
     const allPlants = plantList.map((plant) =>{
+        // console.log(plant.id)
         return(
         <>
         <PlantInfo 
@@ -22,6 +23,7 @@ function PlantContainer({ currentUser, plants, setPlants, handleAddPlant, handle
         handleDelete={handleDelete}
         db={db}
         setDb={setDb}
+        handleDeletePlant={handleDeletePlant}
         />
         </>
     )

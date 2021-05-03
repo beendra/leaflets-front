@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 function CreateNewPlant({ currentUser, handleAddPlant, db, setDb }){
-    const history = useHistory()
+    const history = useHistory();
     const [createState, setCreateState] = useState({
         plant_name: "",
         photo: null,
