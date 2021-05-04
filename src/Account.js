@@ -57,8 +57,7 @@ function Account({ currentUser, db, setDb }){
 
     return(
         <div className="main">
-        <p>Account</p>
-            <button onClick={handleShowAddPlant}>Add a Plant</button>
+            <button className="add-plant-button" onClick={handleShowAddPlant}>Add a Plant</button>
             { showAdd ? <CreateNewPlant currentUser={currentUser} handleAddPlant={handleAddPlant} db={db} setDb={setDb} showAdd={showAdd} setShowAdd={setShowAdd}/> : null}
             
 

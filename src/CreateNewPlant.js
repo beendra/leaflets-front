@@ -48,7 +48,7 @@ function CreateNewPlant({ currentUser, handleAddPlant, db, setDb, showAdd, setSh
 
     return(
         <div className="new-plant-form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form-style">
                 <label>Name: </label>
                     <input
                         type="text"

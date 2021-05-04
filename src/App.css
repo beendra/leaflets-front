@@ -1,8 +1,15 @@
 body {
   background-color: rgb(211, 240, 211);
 }
+
 :root {
   --primary: #356152;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .btn {
@@ -55,11 +62,20 @@ body {
 
 .main {
   background-color: rgb(235, 238, 235);
-  border: 10px;
-  border-style: solid;
-  border-color: black;
+  border: 2px;
+  border-style: groove;
+  border-color: rgb(211, 240, 211);
   width: 60%;
   margin-left: 20%;
+}
+
+.add-plant-button {
+  text-align: right;
+  justify-content: right;
+  align-items: right;
+  margin: 15px;
+  margin-left: 85%;
+  padding: 8px;
 }
 
 .header {
@@ -166,29 +182,47 @@ body {
 
 .container {
   border: 3px;
-  border-style: solid;
+  border-style: none;
   border-color: blue;
+}
+
+h2 {
+  padding-bottom: 20px;
+  border-bottom: solid 1px;
+  border-color:rgb(5, 53, 26)
 }
 
 .one-plant {
   height: 200px;
-  width: 175px;
+  width: 95%;
   margin: 15px;
   border: 5px;
-  border-style: dotted;
-  border-color: black;
+  border-style: groove ;
+  border-color: rgb(174, 221, 190);
+}
+
+.my-plant-img {
+  height: 75px;
+  width: 75px;
+}
+
+.one-plant-btn {
+  text-align: right;
+  justify-content: right;
+  align-items: right;
 }
 
 .logs {
   border: 2px;
   border-style: solid;
-  border-color: red;
+  border-color: rgb(3, 78, 9);
+  background-color: rgb(235,238,235);
 }
 
 .each-log {
   border: 2px;
   border-style: dashed;
-  border-color: rgb(201, 107, 196);
+  border-color: rgb(3, 78, 9);
   justify-content: right;
   align-items: right;
 }

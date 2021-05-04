@@ -32,7 +32,7 @@ function PlantContainer({ currentUser, plants, setPlants, handleAddPlant, handle
 
     return (
         <div className="container">
-        <p>My Plants</p>
+        <h2>My Plants</h2>
             {allPlants}
         </div>
     )
