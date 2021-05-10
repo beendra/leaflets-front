@@ -52,6 +52,7 @@ function AddLogForm({ plant, currentUser, handleAddLog, showAddLogForm, setShowA
                             value={logForm.date}
                             onChange={handleChange}
                         />
+                        <br />
                     <label>Entry: </label>
                         <input
                             type="textarea"
@@ -59,7 +60,7 @@ function AddLogForm({ plant, currentUser, handleAddLog, showAddLogForm, setShowA
                             value={logForm.entry}
                             onChange={handleChange}
                         />
-                        <input type="submit" value="Submit" /> 
+                        <input type="submit" value="Submit" className="butt"/> 
                 </form> 
         </div>
     )

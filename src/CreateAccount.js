@@ -82,7 +82,7 @@ function CreateAccount({ setCurrentUser, newAccount}){
                     {error}
                 </p>
                 ))} */}
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Submit" className="butt"/>
             </form>
         </div>
     )

@@ -69,6 +69,20 @@ body {
   margin-left: 20%;
 }
 
+.home-main {
+  background-color: rgb(235, 238, 235);
+  border: 2px;
+  border-style: groove;
+  border-color: rgb(211, 240, 211);
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: block;
+  overflow: auto;
+  border-radius: 15px;
+}
+
 .add-plant-button {
   text-align: right;
   justify-content: right;
@@ -193,17 +207,23 @@ h2 {
 }
 
 .one-plant {
-  height: 200px;
+  
   width: 95%;
   margin: 15px;
   border: 5px;
   border-style: groove ;
   border-color: rgb(174, 221, 190);
+  display: inline-block;
+  overflow: auto;
+  padding: 15px;
 }
 
 .my-plant-img {
-  height: 75px;
-  width: 75px;
+  height: 200px;
+  width: 200px;
+  border: 2px;
+  border-style: solid;
+  border-color: rgb(3, 78, 9);
 }
 
 .one-plant-btn {
@@ -213,18 +233,33 @@ h2 {
 }
 
 .logs {
-  border: 2px;
-  border-style: solid;
+  /* border: 2px;
+  border-style: solid; */
   border-color: rgb(3, 78, 9);
   background-color: rgb(235,238,235);
+  /* justify-self: unset;*/
+  align-content: right; 
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.butt {
+  margin: 3px;
+  align-items: left;
 }
 
 .each-log {
-  border: 2px;
-  border-style: dashed;
+  border: 1px;
+  border-style: solid;
   border-color: rgb(3, 78, 9);
   justify-content: right;
   align-items: right;
+  margin: 5px;
+  position: relative;
+  padding: 5px;
+
 }
 
 .db-container {
@@ -234,27 +269,31 @@ h2 {
   border-color: black;
   width: 60%;
   margin-left: 20%;
-  justify-content: center;
+  justify-content: space-between;
+  display: grid;
+  /* grid-template-columns: 300px 300px; */
+  grid-template-columns: 1fr;
+
 }
 
 .each-db-card {
-  height: 200px;
-  width: 175px;
+  height: 250px;
+  width: 95%;
   border: 5px;
   margin: 30px;
+  margin-bottom: 150px;
   align-items: center;
   padding: 5px;
-  border: 2px;
-  border-style: solid;
-  border-color: black;
   font-size: 12px;
 }
 
 .db-card-image {
   object-fit: contain;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   padding: 5px;
+  align-self: left;
+  margin-left: 0%;
 }
 
 .sci-name {
@@ -262,10 +301,12 @@ h2 {
   font-style: italic;
 }
 
+
 @media screen and (max-width: 960px) {
   .navbar-items {
     position: relative;
   }
+
   .nav-menu {
     display: flex;
     flex-direction: column;

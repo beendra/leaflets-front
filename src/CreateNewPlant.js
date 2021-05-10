@@ -72,7 +72,7 @@ function CreateNewPlant({ currentUser, handleAddPlant, db, setDb, showAdd, setSh
                         multiple={false} 
                         onChange={onImageChange} 
                     /> */}
-                <input type="submit" value="Submit" /> 
+                <input type="submit" value="Submit" className="butt"/> 
             </form> 
             <br/>
         </div>

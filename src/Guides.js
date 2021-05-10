@@ -22,6 +22,9 @@ function Guides({ db, setDb }){
     return (
         <div className="db-container">
         {eachCard}
+        <br />
+        <br />
+    
         </div>
     )
 }

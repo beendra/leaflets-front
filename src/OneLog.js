@@ -12,15 +12,17 @@ function OneLog({ currentUser, log, plantId, plant, entry, handleDelete }){
 
         return (
         <div className="each-log">
-            <p>{log.date}</p>
-            <p>{edit}</p>
-
-            <button onClick={handleEditClick}>Edit</button>
+            <button onClick={handleEditClick} style={{marginLeft: '850px'}}>Edit</button>
             { showEditForm ? 
             <div className="edit-log">
             <EditLogForm currentUser={currentUser} log={log} plantId={plantId} plant={plant} entry={edit} setEdit={setEdit} edit={edit} handleDelete={handleDelete} showEditForm={showEditForm} setShowEditForm={setShowEditForm}/> 
             </div>
             : null}
+            
+            <p>{log.date}</p>
+            <p>{edit}</p>
+
+            
 
         </div>
         )

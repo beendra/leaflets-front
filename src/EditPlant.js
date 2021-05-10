@@ -79,10 +79,10 @@ function EditPlant({ currentUser, db, setDb, handleDeletePlant, plant, showEditP
                         multiple={false} 
                         onChange={onImageChange} 
                     /> */}
-                <input type="submit" value="Submit" /> 
+                <input type="submit" value="Submit" className="butt"/> 
             </form> 
             <br/>
-            <button onClick={handleDeleteFetch}>Delete</button>
+            <button onClick={handleDeleteFetch} className="butt">Delete</button>
         </div>
     )   
 }

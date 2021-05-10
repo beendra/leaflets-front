@@ -18,11 +18,18 @@ function PlantInfo({ id, plant, currentUser, handleAddPlant, handleAddLog, logs,
     }
 
     return(
-        <div className="one-plant">
+        <div className="one-plant">        
+        
+        <button className="one-plant-btn" onClick={handleShowEditPlants} style={{marginLeft: '850px'}}>Edit</button>
+        { showEditPlant ?
+        <EditPlant db={db} setDb={setDb} handleDeletePlant={handleDeletePlant} plant={plant} showEditPlant={showEditPlant} setShowEditPlant={setShowEditPlant} id={id} currentUser={currentUser} editPlant={editPlant} setEditPlant={setEditPlant} handleUpdatePlant={handleUpdatePlant}/>
+        : null }
+
         {/* <p>{plant.id}</p> */}
         <p>{editPlant}</p>
         {/* <img src={plant.image} alt={plant.plant_name} className="my-plant-img"/> */}
         <img src="https://res.cloudinary.com/beendra/image/upload/v1620062869/Pilea_wvxmgl.jpg" alt={plant.plant_name} className="my-plant-img"/>
+
         <p>{plant.plant_name}</p>
         <button className="one-plant-btn" onClick={handleLogs}>Logs</button>
         { showLogs ? 
@@ -31,10 +38,7 @@ function PlantInfo({ id, plant, currentUser, handleAddPlant, handleAddLog, logs,
         </div>
         : null }
 
-        <button className="one-plant-btn" onClick={handleShowEditPlants}>Edit</button>
-        { showEditPlant ?
-        <EditPlant db={db} setDb={setDb} handleDeletePlant={handleDeletePlant} plant={plant} showEditPlant={showEditPlant} setShowEditPlant={setShowEditPlant} id={id} currentUser={currentUser} editPlant={editPlant} setEditPlant={setEditPlant} handleUpdatePlant={handleUpdatePlant}/>
-        : null }
+
         </div>
     )
 }

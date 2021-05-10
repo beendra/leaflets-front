@@ -78,7 +78,7 @@ function EditLogForm({ currentUser, log, plantId, plant, entry, setEdit, handleD
                         <input type="submit" value="Submit" /> 
                 </form> 
                 <br />
-                <button onClick={handleDeleteFetch}>Delete</button>
+                <button onClick={handleDeleteFetch} className="butt">Delete</button>
         </div>
     )
 }
