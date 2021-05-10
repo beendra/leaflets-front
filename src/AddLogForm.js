@@ -59,7 +59,9 @@ function AddLogForm({ plant, currentUser, handleAddLog, showAddLogForm, setShowA
                             name="entry"
                             value={logForm.entry}
                             onChange={handleChange}
+                            placeholder="Today I..."
                         />
+                        <br/>
                         <input type="submit" value="Submit" className="butt"/> 
                 </form> 
         </div>

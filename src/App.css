@@ -167,6 +167,7 @@ body {
   width: 60%;
   margin-left: 20%;
   padding-bottom: 50px;
+  border-radius: 15px;
 }
 
 .login {
@@ -177,6 +178,8 @@ body {
   width: 60%;
   margin-left: 20%;
   padding-bottom: 50px;
+  border-radius: 15px;
+  margin-top: 100px;
 }
 
 .login-h2 {
@@ -197,7 +200,6 @@ body {
 .container {
   border: 3px;
   border-style: none;
-  border-color: blue;
 }
 
 h2 {
@@ -216,6 +218,7 @@ h2 {
   display: inline-block;
   overflow: auto;
   padding: 15px;
+  border-radius: 15px;
 }
 
 .my-plant-img {
@@ -224,6 +227,7 @@ h2 {
   border: 2px;
   border-style: solid;
   border-color: rgb(3, 78, 9);
+  border-radius: 15px;
 }
 
 .one-plant-btn {
@@ -243,6 +247,11 @@ h2 {
   position: relative;
   margin: 0 auto;
   padding: 10px;
+  border-radius: 15px;
+}
+
+textarea {
+  resize: vertical;
 }
 
 .butt {
@@ -259,12 +268,13 @@ h2 {
   margin: 5px;
   position: relative;
   padding: 5px;
+  border-radius: 15px;
 
 }
 
 .db-container {
   background-color: rgb(235, 238, 235);
-  border: 10px;
+  border: 2px;
   border-style: solid;
   border-color: black;
   width: 60%;
@@ -273,7 +283,8 @@ h2 {
   display: grid;
   /* grid-template-columns: 300px 300px; */
   grid-template-columns: 1fr;
-
+  border-radius: 15px;
+  margin-top: 5px;
 }
 
 .each-db-card {
@@ -285,15 +296,21 @@ h2 {
   align-items: center;
   padding: 5px;
   font-size: 12px;
+
 }
 
 .db-card-image {
-  object-fit: contain;
+  /* object-fit: contain; */
   height: 150px;
   width: 150px;
   padding: 5px;
   align-self: left;
   margin-left: 0%;
+  border-radius: 15px;
+  background-color: rgb(3, 78, 9);
+  border-style: solid;
+  border-color: rgb(3, 78, 9);
+  margin-top: 5px;
 }
 
 .sci-name {
