@@ -27,7 +27,7 @@ function Profile({ currentUser, setCurrentUser, editAccount }){
             .then(user => {
                 setCurrentUser(user);
                 editAccount(user);
-                console.log(user)
+                console.log(user);
         })
     }
 
@@ -53,8 +53,8 @@ function Profile({ currentUser, setCurrentUser, editAccount }){
                 {/* <p>Username: </p> */}
                 {/* <p>{currentUser.username}</p> */}
                 {/* <p>Name: </p> */}
-                {/* <p>{.name}</p> */}
-                <img src = "https://res.cloudinary.com/beendra/image/upload/v1620062861/AlocasiaAmazonica_oqgqc8.jpg" alt="amazonica" style={{ height: 200, width: 200}}/>
+                {/* <p>{.name}</p>*/}
+                <img src = "https://res.cloudinary.com/beendra/image/upload/v1620062861/AlocasiaAmazonica_oqgqc8.jpg" alt="amazonica" style={{ height: 200, width: 200}}/> 
 
             </div>
             <div className="vert"></div>
