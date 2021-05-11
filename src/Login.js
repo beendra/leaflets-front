@@ -54,11 +54,6 @@ function Login( {currentUser, setCurrentUser} ){
                         onChange={handleChange}
                         autoComplete="current-password"
                 />
-                {/* {errors.map((error) => (
-                <p style={{ color: "red" }} key={error}>
-                    {error}
-                </p>
-                ))} */}
                     <input type="submit" value="Login" />
             </form>
         </div>

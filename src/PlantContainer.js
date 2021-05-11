@@ -4,7 +4,7 @@ import PlantInfo from './PlantInfo';
 function PlantContainer({ currentUser, plants, setPlants, handleAddPlant, handleAddLog, logs, setLogs, handleDelete, db, setDb, handleDeletePlant, handleUpdatePlant }){
 
     // const plantList = Array.from(plants)
-    console.log(plants)
+    // console.log(plants)
 
     const allPlants = plants.map((plant) =>{
         
@@ -32,7 +32,7 @@ function PlantContainer({ currentUser, plants, setPlants, handleAddPlant, handle
 
     return (
         <div className="container">
-        <h2>My Plants</h2>
+        <h2>My Plants:</h2>
             {allPlants}
         </div>
     )

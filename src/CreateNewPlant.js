@@ -42,9 +42,6 @@ function CreateNewPlant({ currentUser, handleAddPlant, db, setDb, showAdd, setSh
         setCreateState({...createState, [e.target.name]: e.target.value})
     }
 
-    // function onImageChange(e){
-    //     setCreateState({...createState, photo: e.target.files[0] })
-    // }
 
     return(
         <div className="new-plant-form">
@@ -65,13 +62,6 @@ function CreateNewPlant({ currentUser, handleAddPlant, db, setDb, showAdd, setSh
                         { db.map((plant) => <option key={plant.id} id={plant.id}>{plant.common_name}</option>) }
                     </select>
             <br />
-                {/* <label>Photo: </label>
-                    <input 
-                        type="file" 
-                        accept="image/*" 
-                        multiple={false} 
-                        onChange={onImageChange} 
-                    /> */}
                 <input type="submit" value="Submit" className="butt"/> 
             </form> 
             <br/>

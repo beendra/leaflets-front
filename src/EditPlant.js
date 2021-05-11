@@ -7,7 +7,6 @@ function EditPlant({ currentUser, db, setDb, handleDeletePlant, plant, showEditP
     const [editPlantForm, setEditPlantForm] = useState({
         id: "",
         plant_name: "",
-        photo: null,
         user_id: 1,
         database_id: db.id
     });
@@ -28,7 +27,6 @@ function EditPlant({ currentUser, db, setDb, handleDeletePlant, plant, showEditP
         .then((editedPlant) => {
             localStorage.setItem("plantId", plant.id)
             // console.log("LOCAL", localStorage.getItem("plantId"));
-            // setEditPlant(editedPlant)
             handleUpdatePlant(editedPlant)
             // console.log(plant)
             history.push('./my-account');
@@ -72,13 +70,6 @@ function EditPlant({ currentUser, db, setDb, handleDeletePlant, plant, showEditP
                         { db.map((plant) => <option key={plant.id}>{plant.common_name}</option>) }
                     </select>
             <br />
-                {/* <label>Photo: </label>
-                    <input 
-                        type="file" 
-                        accept="image/*" 
-                        multiple={false} 
-                        onChange={onImageChange} 
-                    /> */}
                 <input type="submit" value="Submit" className="butt"/> 
             </form> 
             <br/>

@@ -3,12 +3,11 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 
-function CreateAccount({ setCurrentUser, newAccount}){
+function CreateAccount({ setCurrentUser, newAccount }){
     const [formData, setFormData] = useState({
         username: "", 
         password: "",
-        name: "",
-        avatar: null
+        name: ""
     })
 
     const history = useHistory()
@@ -69,19 +68,6 @@ function CreateAccount({ setCurrentUser, newAccount}){
                         onChange={handleChange}
                     />
                     <br />
-                <label>Avatar: </label>
-                    <input 
-                    type='file' 
-                    name='avatar'
-                    value={formData.image}
-                    onChange={handleChange}
-                    /> 
-                    <br />
-                {/* {errors.map((error) => (
-                <p style={{ color: "red" }} key={error}>
-                    {error}
-                </p>
-                ))} */}
                     <input type="submit" value="Submit" className="butt"/>
             </form>
         </div>

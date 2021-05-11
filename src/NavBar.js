@@ -1,7 +1,6 @@
 import React from 'react';
 import {MenuItems} from './MenuItems';
 import { useState } from 'react';
-// import {Button} from './Button';
 
 function NavBar({ currentUser, setCurrentUser }){
     const [ clicked, setClicked ] = useState(false)
@@ -26,7 +25,6 @@ function NavBar({ currentUser, setCurrentUser }){
                         </li>
                     )
                 })}
-                {/* <li><Link to=""></Link></li> */}
             </ul>
         </nav>
     );

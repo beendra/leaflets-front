@@ -14,7 +14,7 @@ const DataCard = ({ id, image, common_name, scientific_name, lighting, watering,
                     <p style={ {fontWeight: 'bold'} }>Humidity:</p>
                         <p>{humidity}</p>
                     {/* <p style={ {fontWeight: 'bold'} }>Pet Friendly:</p>
-                        <p>{pet_friendly}</p>*/} 
+                        <p>if {pet_friendly} ? </p>*/} 
                 {/* </div>   */}
             <hr />
         </div>

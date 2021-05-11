@@ -21,9 +21,6 @@ function OneLog({ currentUser, log, plantId, plant, entry, handleDelete }){
             
             <p>{log.date}</p>
             <p>{edit}</p>
-
-            
-
         </div>
         )
     

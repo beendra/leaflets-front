@@ -6,7 +6,7 @@ export const MenuItems = [
     },
     {
         title: 'Profile',
-        url: '/my-account',
+        url: '/profile',
         cName: 'nav-links'
     },
     {
@@ -18,10 +18,5 @@ export const MenuItems = [
         title: 'Guides',
         url: '/guides',
         cName: 'nav-links'
-    },
-    // {
-    //     title: 'Logout',
-    //     url: '/login',
-    //     cName: 'nav-links'
-    // }
+    }
 ]
