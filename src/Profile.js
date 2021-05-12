@@ -9,8 +9,8 @@ function Profile({ currentUser, setCurrentUser, editAccount }){
         name: ""
     })
     const history = useHistory();
-
-
+    // const userId = localStorage.getItem('userId');
+    
 
     console.log(currentUser)
 
@@ -50,10 +50,10 @@ function Profile({ currentUser, setCurrentUser, editAccount }){
     return (
         <div className="profile-main">
             <div className="profile-content">
-                {/* <p>Username: </p> */}
-                {/* <p>{currentUser.username}</p> */}
-                {/* <p>Name: </p> */}
-                {/* <p>{.name}</p>*/}
+                {/* <p>Username: </p>
+                <p>{userId.username}</p>
+                <p>Name: </p>
+                <p>{userId.name}</p> */}
                 <img src = "https://res.cloudinary.com/beendra/image/upload/v1620062861/AlocasiaAmazonica_oqgqc8.jpg" alt="amazonica" style={{ height: 200, width: 200}}/> 
 
             </div>
