@@ -54,8 +54,8 @@ function AddLogForm({ plant, currentUser, handleAddLog, showAddLogForm, setShowA
                         />
                         <br />
                     <label>Entry: </label>
-                        <input
-                            type="textarea"
+                        <textarea
+                            type="text"
                             name="entry"
                             value={logForm.entry}
                             onChange={handleChange}

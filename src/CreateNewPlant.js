@@ -8,9 +8,9 @@ function CreateNewPlant({ currentUser, handleAddPlant, db, setDb, showAdd, setSh
         plant_name: "",
         // photo: null,
         user_id: 1,
-        database_id: db.plant
+        database_id: db[0].common_name
     })
-
+    console.log(db)
     console.log(createState.database_id)
     
 
